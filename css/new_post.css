@@ -1,0 +1,46 @@
+.title_input{
+    font-size: 64px !important;
+    
+}
+
+.form-control{
+    transition: ease-in-out 0.3s;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid grey;
+}
+
+
+.form-control:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    box-shadow: none;
+}
+
+#new_c{
+    height: 500px;
+}
+
+.sidebar{
+    height: 100vh;
+    padding-top: 20px;
+    background: #fff;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+}
+.sidebar_link{
+    margin: 20px 30px;
+}
+
+.active{
+    background-color: #dfdfdf;
+}
+
+.sub_link{
+    display: block;
+    padding: 10px 40px;
+}
+.sidebar i{
+    padding-right: 10px;
+    width: 30px;
+}

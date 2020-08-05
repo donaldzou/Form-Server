@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!--Required-->
+    <meta charset="utf-8">
+    <title>Post Comments</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://cdn.tiny.cloud/1/1ndcqslzbdcr8l8ij8d5osqj3qgzpgs09x0df7to4qc0xdu6/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+        <script src="https://kit.fontawesome.com/6c5e2ea966.js" crossorigin="anonymous"></script>
+    <script>
+        tinymce.init({
+
+            selector: "#new_c",
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent',
+
+            setup: function (editor) {
+                editor.on('change', function () {
+                    tinymce.triggerSave();
+                });
+            }
+        });
+        tinymce.init({
+            selector: "#edit_c",
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent',
+
+            setup: function (editor) {
+                editor.on('change', function () {
+                    tinymce.triggerSave();
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="css/new_post.css">
+</head>
+
+<body>
+    <div class='row' style=''>
+        <div class='col-sm-3'>
+            <div class='sidebar'>
+                <h4 style="padding: 10px 20px;">Control Panel</h4>
+                <div class='sidebar_link'>
+                    <a href='#'><i class="fas fa-home"></i>Home</a>
+                </div>
+                <div class='sidebar_link'>
+                    <a href='#'><i class="fas fa-file"></i>Posts</a>
+                    <a class="sub_link" href='#'><i class="fas fa-plus"></i>New Posts</a>
+                    <a class="sub_link" href='#'><i class="fas fa-search"></i>View Posts</a>
+                    <a class="sub_link" href='#'><i class="fas fa-pen"></i>Edit Posts</a>
+                </div>
+            </div>
+
+        </div>
+        <div class='col-sm-9'>
+            <div class='container alert_container main' style='margin-top: 20px;'></div>
+            <div class="container form_container" style='padding-top: 20px;'>
+
+                <form method="post">
+                    <div class="form-group">
+                        <!-- <label for="exampleInputEmail1">Title</label> -->
+                        <input type="text" class="title_input form-control " id="title" aria-describedby="emailHelp"
+                            required placeholder="Enter your title">
+                    </div>
+                    <div class='row'>
+                        <div class='col-sm'>
+                            <div class="form-group">
+                                <!-- <label for="exampleInputEmail1">Username</label> -->
+                                <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                                    required placeholder="Enter your username">
+                            </div>
+                        </div>
+                    </div>
+                    <textarea id="new_c" placeholder="Enter your comments" class='new_c' required></textarea>
+                </form>
+                <hr>
+                <button type="button" class="btn btn-primary post" type="submit">Post</button>
+            </div>
+            <div class='container content'>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Edit Comment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class='modal_alert'></div>
+                    <textarea id="edit_c" placeholder="Enter your comments" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="save_edit()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src='/js/new_post.js'></script>
+
+</html>
